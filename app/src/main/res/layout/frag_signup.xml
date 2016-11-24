@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/editText_username"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:background="@drawable/rectangle_edittext"
+        android:hint="@string/email"
+        android:drawableLeft="@drawable/ic_me"
+        android:drawablePadding="10dp"
+        android:textColorHint="@color/hint_text_color"
+        android:singleLine="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:drawableLeft="@drawable/password_lockicon"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:id="@+id/editText_password"
+        android:layout_alignRight="@+id/editText_username"
+        android:layout_alignEnd="@+id/editText_username"
+        android:background="@drawable/rectangle_edittext"
+        android:hint="@string/password"
+        android:textColorHint="@color/hint_text_color"
+        android:maxLength="16"
+        android:layout_below="@+id/editText_username" />
+
+    <EditText
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:drawableLeft="@drawable/password_lockicon"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:id="@+id/editText_cmPassword"
+        android:background="@drawable/rectangle_edittext"
+        android:layout_alignRight="@+id/editText_password"
+        android:layout_alignEnd="@+id/editText_password"
+        android:hint="@string/confirm_password"
+        android:textColorHint="@color/hint_text_color"
+        android:maxLength="16"
+        android:layout_below="@+id/editText_password" />
+
+    <Button
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:textSize="@dimen/textsize_normal"
+        android:id="@+id/button_register"
+        android:background="@drawable/rounded_edittext"
+        android:textColor="@color/colorAccent"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/editText_cmPassword"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

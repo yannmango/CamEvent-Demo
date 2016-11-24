@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.page.MainActivity">
+
+    <item android:id="@+id/nav_search"
+        android:title="search"
+        android:icon="@drawable/ic_search_white"
+        app:showAsAction="always"/>
+    <item android:id="@+id/post"
+        android:title="post"
+        android:icon="@drawable/add_white"
+        app:showAsAction="always"/>
+    <item android:id="@+id/nav_map"
+        android:title="map"
+        android:icon="@drawable/place"
+        app:showAsAction="always"/>
+
+</menu>
