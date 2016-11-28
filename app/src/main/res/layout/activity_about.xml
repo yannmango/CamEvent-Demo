@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:text="some@gmail.com"
+                android:text="yananchen047@gmail.com"
                 android:textColor="@android:color/darker_gray"
 
                 android:layout_width="wrap_content"
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:text="https://github.com/"
+                android:text="https://github.com/sugartxy/CamEvent-Demo"
                 android:textColor="@android:color/darker_gray"
 
                 android:layout_width="wrap_content"
