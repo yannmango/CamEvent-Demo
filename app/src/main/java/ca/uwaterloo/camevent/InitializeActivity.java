@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.ProgressBar;
+
+import com.romainpiel.shimmer.Shimmer;
+import com.romainpiel.shimmer.ShimmerTextView;
 
 import java.util.ArrayList;
 
@@ -15,8 +17,6 @@ import Core.UWOpenDataAPI;
 import Events.Event;
 import Events.EventTime;
 import Events.EventsParser;
-import com.romainpiel.shimmer.Shimmer;
-import com.romainpiel.shimmer.ShimmerTextView;
 
 public class InitializeActivity extends AppCompatActivity implements JSONDownloader.onDownloadListener {
     //String apiKey = null;
@@ -24,8 +24,7 @@ public class InitializeActivity extends AppCompatActivity implements JSONDownloa
     final String LOGCAT_DOWNLOAD="All Data Has";
     EventDBHandler eventDB= new EventDBHandler(this);
     private EventsParser[] eventparser;
-    private ArrayList<Event> events=null;
-    private Initialize initilize = new Initialize();
+    Initialize initilize = new Initialize();
     private String[] url;
     ShimmerTextView tv;
     Shimmer shimmer;
@@ -40,16 +39,20 @@ public class InitializeActivity extends AppCompatActivity implements JSONDownloa
             //initilize.create();
             //clear all the data in the databases
             eventDB.deleteallEvents();
-            events =initilize.getEvents();
+            ArrayList<Event> events =initilize.getEvents();
+            // The first step of data download is success is the following out has printed on the screen
+            Log.d("The following is","sign that it works");
+            Log.d("EventData Size is", String.valueOf(events.size()));
             eventparser= new EventsParser[100];
             url= new String[100];
-            System.out.println(events.size());
             String apiKey = getString(R.string.api_key); // store your key in strings.xml
             for(int i=0;i<100;i++){
                 EventsParser parser= new EventsParser();
                 parser.setParseType(EventsParser.ParseType.EVENTS_SITE_ID);
                 eventparser[i]=parser;
-                String URL=UWOpenDataAPI.buildURL(eventparser[i].getEndPoint(events.get(i).getSite(), String.valueOf(events.get(i).getEventId())), apiKey);
+                String site=events.get(i).getSite();
+                String id= String.valueOf(events.get(i).getEventId());
+                String URL=UWOpenDataAPI.buildURL(eventparser[i].getEndPoint(site,id), apiKey);
                 url[i] =URL;
             }
             // Step 3

@@ -14,7 +14,6 @@ import Events.EventsParser;
 public class Initialize implements JSONDownloader.onDownloadListener {
 
     private EventsParser parser = new EventsParser();
-    private ArrayList<Event> events=null;
 
     public Initialize(){
         parser.setParseType(EventsParser.ParseType.EVENTS);
@@ -45,7 +44,7 @@ public class Initialize implements JSONDownloader.onDownloadListener {
         //events = parser.getEvents();
     }
     public ArrayList<Event> getEvents(){
-        events = parser.getEvents();
+        ArrayList<Event> events = parser.getEvents();
         return events;
     }
 }
